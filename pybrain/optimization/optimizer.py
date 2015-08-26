@@ -161,7 +161,7 @@ class BlackBoxOptimizer(DirectSearchLearner):
         # If the evaluable is provided as a list of numbers or as an array,
         # we wrap it into a ParameterContainer.
         if isinstance(evaluable, ndarray):            
-            pc = ParameterContainer(len(evaluable))
+            pc = ParameterContainer(evaluable.size)
             pc._setParameters(evaluable)
             self._wasWrapped = True
             evaluable = pc
